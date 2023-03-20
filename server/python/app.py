@@ -2,6 +2,11 @@ import pickle
 import numpy as np
 from flask import Flask, request, jsonify
 import cv2
+import openai
+import os
+
+openai.api_key = "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"
+
 
 # Load the machine learning model
 with open("./models/crop-recommendation-model.pkl", "rb") as f:
@@ -10,7 +15,7 @@ with open("./models/crop-recommendation-model.pkl", "rb") as f:
 app = Flask(__name__)
 
 
-@app.route("/disease-predict", methods=["POST"])
+@app.route("/disease-prediction", methods=["POST"])
 def predict():
     # Check if the request contains image data
     if "image" in request.files:
@@ -41,7 +46,7 @@ def predict_crop():
         return "Hello"
     if request.method == "POST":
         # get the JSON data from the request
-        json_data = request.get_json()
+        json_data = request.get_json(force=True)
         # extract the values of the attributes
         N, P, K, Temperature, Humidity, Rainfall, Ph = (
             json_data["N"],
@@ -54,6 +59,21 @@ def predict_crop():
         )
         prediction = model.predict([[N, P, K, Temperature, Humidity, Ph, Rainfall]])
         return jsonify({"crop": prediction[0]})
+
+
+@app.route("/disease-consultation", methods=["POST"])
+def disease_consultation():
+    if request.method == "POST":
+        json_data = request.get_json()
+        Disease = json_data["Disease"]
+        resp = openai.Completion.create(
+            model="text-davinci-003",
+            prompt=f"I am a farmer in India and my plants are suffering from {Disease}, what should I do?",
+            max_tokens=1024,
+            temperature=0,
+        )["choices"][0]["text"]
+        print(resp)
+        return jsonify(resp)
 
 
 if __name__ == "__main__":
