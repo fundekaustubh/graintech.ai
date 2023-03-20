@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 import cv2
 import openai
 import os
+from flask_cors import CORS
 
 openai.api_key = "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"
 
@@ -13,6 +14,7 @@ with open("./models/crop-recommendation-model.pkl", "rb") as f:
     model = pickle.load(f)
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/disease-prediction", methods=["POST"])
@@ -65,15 +67,15 @@ def predict_crop():
 def disease_consultation():
     if request.method == "POST":
         json_data = request.get_json()
-        Disease = json_data["Disease"]
+        Plant, Disease = json_data["Plant"], json_data["Disease"]
         resp = openai.Completion.create(
             model="text-davinci-003",
-            prompt=f"I am a farmer in India and my plants are suffering from {Disease}, what should I do?",
-            max_tokens=1024,
+            prompt=f"I am a farmer in India and my {Plant} plants are suffering from {Disease}. Provide me with step wise instructions for what I should do, including other details like the total duration for each step and what each step achieves.",
+            max_tokens=2048,
             temperature=0,
         )["choices"][0]["text"]
         print(resp)
-        return jsonify(resp)
+        return jsonify({"recommendation": resp})
 
 
 if __name__ == "__main__":
