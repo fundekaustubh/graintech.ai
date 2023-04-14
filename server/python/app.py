@@ -5,36 +5,52 @@ import cv2
 import openai
 import os
 from flask_cors import CORS
+import torch
+import torchvision.transforms as transforms
+from PIL import Image
 
-openai.api_key = "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"
-
+openai.api_key = "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"
 
 # Load the machine learning model
 with open("./models/crop-recommendation-model.pkl", "rb") as f:
-    model = pickle.load(f)
+    cropPredictionModel = pickle.load(f)
+
+diseasePredictionModel = torch.load(
+    "./models/leaf-disease-prediction-model.pth", map_location=torch.device("cpu")
+)
 
 app = Flask(__name__)
 CORS(app)
+
+
+def preprocess_image(image):
+    transform = transforms.Compose(
+        [
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+        ]
+    )
+    image = Image.open(image)
+    image = transform(image).unsqueeze(0)
+    return image
 
 
 @app.route("/disease-prediction", methods=["POST"])
 def predict():
     # Check if the request contains image data
     if "image" in request.files:
-        image = request.files["image"].read()
-        # Convert the image data to a NumPy array
-        # Assuming it's a PNG image
-        np_image = np.frombuffer(image, np.uint8)
-        img = cv2.imdecode(np_image, cv2.IMREAD_UNCHANGED)
-        # Make a prediction using the machine learning model
-        prediction = model.predict(img)
-        # Return the prediction as a JSON response
-        return jsonify({"prediction": prediction.tolist()})
+        file = request.files["image"]
+        image = preprocess_image(file)
+        output = diseasePredictionModel(image)
+        prediction = np.argmax(output.detach().numpy())
+        return jsonify({"prediction": prediction})
     # Check if the request contains JSON data
     elif "json" in request.json:
         data = request.json["json"]
         # Make a prediction using the machine learning model
-        prediction = model.predict(data)
+        prediction = diseasePredictionModel.predict(data)
         # Return the prediction as a JSON response
         return jsonify({"prediction": prediction.tolist()})
     else:
@@ -59,7 +75,9 @@ def predict_crop():
             json_data["Rainfall"],
             json_data["Ph"],
         )
-        prediction = model.predict([[N, P, K, Temperature, Humidity, Ph, Rainfall]])
+        prediction = cropPredictionModel.predict(
+            [[N, P, K, Temperature, Humidity, Ph, Rainfall]]
+        )
         return jsonify({"crop": prediction[0]})
 
 
