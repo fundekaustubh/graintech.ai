@@ -23,7 +23,7 @@ class ActionProvider {
   //function to render message and widgets when gaming sherbot option is clicked
   handleGamingList = () => {
     const message1 = this.createChatBotMessage(
-      'Awesome! Choose your path fellow Assassin.',
+      'You can contact us via email at vishal.gondke@spit.ac.in',
       {
         widget: 'gamingLinks',
         withAvator: true
@@ -35,7 +35,7 @@ class ActionProvider {
   //function to render message and widgets when webdev sherbot option is clicked
   handleWebList = () => {
     const message1 = this.createChatBotMessage(
-      "It's Web Dev time!!! Being the awesomest sensei ever, I'm gonna share the best resources web dev.",
+      "There are several common fertilizers used for crops, including:",
       {
         widget: 'webLinks',
         withAvator: true
@@ -47,7 +47,7 @@ class ActionProvider {
   //function to render message and widgets when YT LINKS sherbot option is clicked
   handleYTList = () => {
     const message1 = this.createChatBotMessage(
-      "Even bots need some entertainment. Grab a shawarma and a coke to watch Sherbot's fav channels on youtube.",
+      "Here are approximate market rates for common crops in India",
       {
         widget: 'ytLinks',
         withAvator: true
@@ -59,7 +59,7 @@ class ActionProvider {
   //function to render message and widgets when talkLINKS sherbot option is clicked
   handleTalkList = () => {
     const message1 = this.createChatBotMessage(
-      'Well well.Fame is tough to handle but I shall answer your questions about me.Go on ',
+      'Here is the list of some of the common plant disesaes, you may click on each one of them to get an idea of a probable cause',
       {
         widget: 'talkLinks',
         withAvator: true
@@ -72,7 +72,7 @@ class ActionProvider {
   //question1
   handleTalkList1 = () => {
     const message1 = this.createChatBotMessage(
-      'Flac, Code ,Binge Watch ,Sleep ,Repeat. 😎😎😎',
+      'Bacterial leaf blight: This disease affects rice plants and is caused by the bacterium Xanthomonas oryzae. It appears as water-soaked lesions on the leaves, which turn yellow and eventually die. The disease can cause significant yield losses.',
       {
         withAvator: true
       }
@@ -84,7 +84,7 @@ class ActionProvider {
   //question2
   handleTalkList2 = () => {
     const message1 = this.createChatBotMessage(
-      'WBF (World Botlife Fund) announced that there are very few metalhead sherbots left, including me.I know ,I know I have such an awesome taste.🔥🔥',
+      'Citrus greening disease: Also known as Huanglongbing (HLB), this disease affects citrus plants and is caused by the bacterium Candidatus Liberibacter. It causes yellowing and blotchy mottling of the leaves, stunted growth, and bitter, misshapen fruit.',
       {
         withAvator: true
       }
@@ -96,7 +96,7 @@ class ActionProvider {
   //question3
   handleTalkList3 = () => {
     const message1 = this.createChatBotMessage(
-      'The taste of shawarma and coke eaten together.......🙌🙌🙌',
+      'Red Rot: This fungal disease affects sugarcane plants and is caused by the fungus Colletotrichum falcatum. It appears as red, sunken lesions on the stalks, which can cause them to break and reduce yield.',
       {
         withAvator: true
       }
@@ -107,7 +107,7 @@ class ActionProvider {
 
   //question4
   handleTalkList4 = () => {
-    const message1 = this.createChatBotMessage('*yawns* in dreamland 🥱🥱', {
+    const message1 = this.createChatBotMessage('Early blight: This fungal disease affects tomato plants and is caused by the fungus Alternaria solani. It appears as brown spots on the leaves, which can cause defoliation and reduce yield.', {
       withAvator: true
     });
 
@@ -117,7 +117,7 @@ class ActionProvider {
   //function to render message and widgets when music sherbot option is clicked
   handleMusicList = () => {
     const message1 = this.createChatBotMessage(
-      "Bots can love sufi genre too or a li'l bit metal or a li'l bit Pop.You never know.",
+      "Here are some of the portals that you may use to seek Government's help",
       {
         widget: 'musicLinks',
         withAvator: true

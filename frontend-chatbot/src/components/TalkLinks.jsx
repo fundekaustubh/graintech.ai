@@ -8,22 +8,22 @@ const TalkLinks=(props)=>{
 
     const questions = [
         { 
-            text : "What do you love to do in your life", 
+            text : "Bacterial leaf blight", 
             handler: props.actionProvider.handleTalkList1,
             id:1,
         },
         { 
-            text:"What's your fav music genre?",
+            text:"Citrus greening disease",
             handler:props.actionProvider.handleTalkList2,
             id:2,
         },
         { 
-            text:"What inspires you?",
+            text:"Red rot",
             handler:props.actionProvider.handleTalkList3,
             id:3,
         },
         { 
-            text:"Where do you live?",
+            text:"Early blight",
             handler:props.actionProvider.handleTalkList4,
             id:4,
         },
