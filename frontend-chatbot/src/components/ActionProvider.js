@@ -35,7 +35,7 @@ class ActionProvider {
   //function to render message and widgets when webdev sherbot option is clicked
   handleWebList = () => {
     const message1 = this.createChatBotMessage(
-      "There are several common fertilizers used for crops, including:",
+      'There are several common fertilizers used for crops, including:',
       {
         widget: 'webLinks',
         withAvator: true
@@ -47,7 +47,7 @@ class ActionProvider {
   //function to render message and widgets when YT LINKS sherbot option is clicked
   handleYTList = () => {
     const message1 = this.createChatBotMessage(
-      "Here are approximate market rates for common crops in India",
+      'Here are approximate market rates for common crops in India',
       {
         widget: 'ytLinks',
         withAvator: true
@@ -107,9 +107,12 @@ class ActionProvider {
 
   //question4
   handleTalkList4 = () => {
-    const message1 = this.createChatBotMessage('Early blight: This fungal disease affects tomato plants and is caused by the fungus Alternaria solani. It appears as brown spots on the leaves, which can cause defoliation and reduce yield.', {
-      withAvator: true
-    });
+    const message1 = this.createChatBotMessage(
+      'Early blight: This fungal disease affects tomato plants and is caused by the fungus Alternaria solani. It appears as brown spots on the leaves, which can cause defoliation and reduce yield.',
+      {
+        withAvator: true
+      }
+    );
 
     this.updateChatbotState(message1);
   };
@@ -128,22 +131,24 @@ class ActionProvider {
 
   //other messages
   greet() {
-    const greetingMessage = this.createChatBotMessage('Hi, Dude/Dudess.');
+    const greetingMessage = this.createChatBotMessage(
+      "Hello, I'm the GrainTech chatbot. How may I help you?"
+    );
     this.updateChatbotState(greetingMessage);
   }
 
-  greet1() {
-    const greetingMessage = this.createChatBotMessage('Da.');
-    this.updateChatbotState(greetingMessage);
-  }
-  greet2() {
-    const greetingMessage = this.createChatBotMessage('mindset');
-    this.updateChatbotState(greetingMessage);
-  }
-  greet3() {
-    const greetingMessage = this.createChatBotMessage('Do you love me?');
-    this.updateChatbotState(greetingMessage);
-  }
+  // greet1() {
+  //   const greetingMessage = this.createChatBotMessage('Da.');
+  //   this.updateChatbotState(greetingMessage);
+  // }
+  // greet2() {
+  //   const greetingMessage = this.createChatBotMessage('mindset');
+  //   this.updateChatbotState(greetingMessage);
+  // }
+  // greet3() {
+  //   const greetingMessage = this.createChatBotMessage('Do you love me?');
+  //   this.updateChatbotState(greetingMessage);
+  // }
   //greet4(){
   //  const greetingMessage = this.createChatBotMessage("I'm sorry I didn't catch that.")
   // this.updateChatbotState(greetingMessage)
@@ -152,7 +157,7 @@ class ActionProvider {
   //farewell
   farewell() {
     const greetingMessage = this.createChatBotMessage(
-      'Hope you enjoyed your time with me...Bye....Over and Out 👋',
+      'Hope you enjoyed your time with me, goodbye!',
       {
         end: true
       }

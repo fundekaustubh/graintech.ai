@@ -11,7 +11,6 @@ const HomeComponent = () => {
   const [text, setText] = useState('');
 
   const handleTranslate = async () => {
-    // const result = await Axios.
     const translatedText = await translate(
       'Light blight is a fungal disease that affects potato plants.',
       {
@@ -23,9 +22,9 @@ const HomeComponent = () => {
     return translatedText;
   };
 
-  useEffect(() => {
-    handleTranslate();
-  }, []);
+  // useEffect(() => {
+  //   handleTranslate();
+  // }, []);
 
   return (
     <div

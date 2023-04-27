@@ -32,9 +32,9 @@ const TalkLinks=(props)=>{
     const talkMarkup = questions.map((link)=>(
         <button key={link.id} 
         className="talk-links-button"
-            onClick={link.handler}>
-                {link.text}
-            </button>
+        onClick={link.handler}>
+            {link.text}
+        </button>
     ));
     
     return <div className="talk-links-container">{talkMarkup}</div>

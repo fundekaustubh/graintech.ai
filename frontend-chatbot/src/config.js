@@ -6,9 +6,9 @@ import BotAvatar from './components/BotAvatar';
 import TalkLinks from './components/TalkLinks';
 
 const config = {
-  botName: 'Sherbot',
+  botName: 'GrainTech.AI Chatbot',
   initialMessages: [
-    createChatBotMessage("Hi I'm Sherbot !!!"),
+    createChatBotMessage("Hello! I'm the GrainTech.AI chatbot."),
 
     createChatBotMessage(
       "I'm here to help or chat with you. What do you want to go ahead with?",
@@ -155,7 +155,7 @@ const config = {
             text: 'mKisan',
             url: 'https://mkisan.gov.in/',
             id: 3
-          },
+          }
           // {
           //   text: 'Enigma Platinum Collection',
           //   url: 'https://www.youtube.com/watch?v=Jdn1j86xDdY&list=PL2sPxDN9Hp0oK0EahHN-JBUm0Fr3FfGE1',
