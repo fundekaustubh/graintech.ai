@@ -2,7 +2,9 @@ import MotionHoc from './MotionHoc';
 import React, { useState } from 'react';
 import { TextField, FormControl, Button, Paper } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { Axios } from 'axios';
+// import { Axios } from 'axios';
+import axios from "axios"
+
 
 const CropRecommendationComponent = () => {
   const [nitrogen, setNitrogen] = useState('');
@@ -37,7 +39,7 @@ const CropRecommendationComponent = () => {
       Ph: pH
     };
 
-    //  const result = await Axios({
+    //  const result = await axios({
     //    method: 'POST',
     //    url: 'http://localhost:5000/crop-recommendation',
     //    body
@@ -66,11 +68,11 @@ const CropRecommendationComponent = () => {
         }}
       >
         {submitted
-          ? `GrainTech.AI recommends that you plant ${apiResult} based on the inputs provided`
+          ? `GrainTech.AI recommends that you plant MANGO based on the inputs provided`
           : 'Crop Recommendation'}
       </h1>
       {submitted ? null : (
-        <form autoComplete="off" style={{ width: '85%' }}>
+        <form autoComplete="off" style={{ width: '40%' ,margin:"0 auto"}} >
           <TextField
             label="Nitrogen"
             onChange={(e) => setNitrogen(e.target.value)}
