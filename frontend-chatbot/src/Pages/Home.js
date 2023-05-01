@@ -31,7 +31,7 @@ const HomeComponent = () => {
     style={{ width: "75%", marginLeft: '75px' }}
     >
       <h1>Home</h1>
-      <h2 style={{width:"70%",textAlign:"center",marginLeft:"15%"}}>Introducing GrainTech.ai - your ultimate solution for precision agriculture! Our cutting-edge technology accurately predicts plant diseases and recommends the best crops to sow based on your soil conditions. With GrainTech.ai, you can boost your crop yield, reduce waste, and maximize profits. Say goodbye to guesswork and hello to smarter farming with GrainTech.ai.</h2>
+      <p style={{width:"75%",textAlign:"center",marginLeft:"17%", fontFamily:"sans-serif",fontSize:"25px"}}>Introducing <span style={{color:"green",fontWeight:"bolder"}}>GrainTech.ai</span> - your ultimate solution for precision agriculture! Our cutting-edge technology accurately predicts plant diseases and recommends the best crops to sow based on your soil conditions. You can boost your crop yield, reduce waste, and maximize profits.</p>
       {/* <form style={{ width: '100%' }}>
           <input type="text" />
         </form> */}
