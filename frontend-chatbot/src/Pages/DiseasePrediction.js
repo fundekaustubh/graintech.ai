@@ -37,7 +37,12 @@ const DiseasePredictionComponent = () => {
   return (
     <>
       <h1>Disease Prediction</h1>
-      {!submit && <input onChange={onChange} type="file" />}
+      {!submit && <input onChange={onChange} type="file"  
+      style={{width: '100%',
+        padding:'12px 20px',
+        marginLeft: '30%',
+        boxSizing: 'border-box'}}
+        />}
       <br />
       {upload ? (
         <img
@@ -71,7 +76,7 @@ const DiseasePredictionComponent = () => {
             </p>
           </>
         ) : (
-          'Please submit image'
+          <p style={{marginTop:"20px"}}>Please submit image</p>
         )}
       </div>
     </>

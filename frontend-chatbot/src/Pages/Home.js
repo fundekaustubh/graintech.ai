@@ -31,26 +31,7 @@ const HomeComponent = () => {
     style={{ width: "75%", marginLeft: '75px' }}
     >
       <h1>Home</h1>
-      {/* <p style={{paddingLeft: '50px', paddingRight: '50px', fontSize: '20px'}}>{text}</p> */}
-      <p style={{paddingLeft: '50px', paddingRight: '50px', fontSize: '20px'}}>
-तुमच्या बटाट्याच्या झाडांवरील इशारा झालेल्या एका उशीरा रोगाबद्दल मला दु:ख आहे. येथे काही चरणदर्शिका आहेत ज्यामुळे तुम्ही रोगाच्या प्रबंधनासाठी मदत करू शकता:
-
-लक्षणे ओळखा: उशीरा रोग हे बटाट्याच्या झाडांवर खालील पानांवरील छोट्या, वृत्ताकार वळणे दाखवते. या वळण्यांमध्ये गहरा तपकिरीतीचा काळा किंवा काळं असतो आणि दुसरे वळणे संयुक्त असू शकतात. इंफेक्टेड पाने अंततः पिवळ्या होतात आणि मात्र यील्डमध्ये कमी येऊ शकते.
-
-इंफेक्टेड पाने काढा: इंफेक्टेड झाडे ओळखल्यानंतर, झाडांमधून इंफेक्टेड पाने काढा. हा रोग इतर झाडांवर पसरण्याचे टाळण्यासाठी मदत करू शकतो. इंफेक्टेड पाने तुमच्या शेतापासून असावे किंवा त्यांना ज्वारपाटीवर टाका किंवा रोगाचे प्रसार कमी करण्यासाठी उजळी दाखवू नका.
-
-फँगिसायड लागवड करा: रोगाचे प्रसार नियंत्रित करण्यासाठी झाडे फँग</p>
-      {/* <div
-        style={{
-          position: 'fixed',
-          right: 0,
-          top: 0,
-          height: '100vh',
-          width: '30%',
-          textAlign: 'center'
-        }}
-      >
-        <h2>Zom The Chatbot!</h2> */}
+      <h2 style={{width:"70%",textAlign:"center",marginLeft:"15%"}}>Introducing GrainTech.ai - your ultimate solution for precision agriculture! Our cutting-edge technology accurately predicts plant diseases and recommends the best crops to sow based on your soil conditions. With GrainTech.ai, you can boost your crop yield, reduce waste, and maximize profits. Say goodbye to guesswork and hello to smarter farming with GrainTech.ai.</h2>
       {/* <form style={{ width: '100%' }}>
           <input type="text" />
         </form> */}
