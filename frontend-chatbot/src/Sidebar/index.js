@@ -4,9 +4,9 @@ import React, { useState } from "react";
 import logo from "../assets/logo.svg";
 import Home from "../assets/home-solid.svg";
 import Team from "../assets/social.svg";
-import Calender from "../assets/sceduled.svg";
+import Calender from "../assets/plant.svg";
 import Projects from "../assets/starred.svg";
-import Documents from "../assets/draft.svg";
+import Documents from "../assets/disease.svg";
 import PowerOff from "../assets/power-off-solid.svg";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
@@ -286,7 +286,7 @@ const Sidebar = () => {
           />
           <Details clicked={profileClick}>
             <Name>
-              <h4>Jhon&nbsp;Doe</h4>
+              <h4>Vishal&nbsp;</h4>
               <a href="/#">view&nbsp;profile</a>
             </Name>
 

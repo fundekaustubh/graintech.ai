@@ -7,27 +7,27 @@ import "./SherbotOptions.css";
 const SherbotOptions = (props) => {
     const options = [
         {
-            text : "Gaming", 
+            text : "Contact Us", 
             handler: props.actionProvider.handleGamingList,
             id:1,
         },
         {
-            text : "Web Dev Resources",
+            text : "Common Fertilizers",
             handler:props.actionProvider.handleWebList,
             id:2,
         },
         {
-            text : "Chat with Sherbot", 
+            text : "Common plant diseases", 
             handler:props.actionProvider.handleTalkList,
             id:3,
         },
         {
-            text : "Sherbot's YT Channels",
+            text : "Current Market price of some crops",
             handler:props.actionProvider.handleYTList,
             id:4,
         },
         {
-            text : "Sherbot's Fav Music", 
+            text : "Government help", 
             handler:props.actionProvider.handleMusicList,
             id:5,
         },
