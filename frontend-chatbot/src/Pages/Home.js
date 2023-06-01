@@ -23,9 +23,9 @@ const HomeComponent = () => {
     return translatedText;
   };
 
-  useEffect(() => {
-    handleTranslate();
-  }, []);
+  // useEffect(() => {
+  //   handleTranslate();
+  // }, []);
 
   return (
     <div

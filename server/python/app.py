@@ -16,7 +16,7 @@ from googletrans import Translator
 
 translator = Translator()
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 classes = [
     "Tomato___Late_blight",
@@ -292,8 +292,8 @@ def disease_consultation():
         try:
             resp = openai.Completion.create(
                 model="text-davinci-003",
-                # prompt=,
-                prompt=f"Hi",
+                prompt=question,
+                # prompt=f"Hi",
                 max_tokens=2048,
                 temperature=0,
             )["choices"][0]["text"]
@@ -309,7 +309,28 @@ def disease_consultation():
                 resp = requests.post(url, json=payload, headers=headers)
                 resp = ast.literal_eval(resp.text)[0]["text"]
             except:
-                resp = ""
+                try:
+                    payload = {
+                        "context": f"I am a farmer in India and my {Plant} plants are suffering from {Disease}. Provide me with step wise instructions for what I should do, including other details like the total duration for each step and what each step achieves.",
+                        "keywords": [Plant, Disease],
+                        "max_tokens": 2048,
+                        "model": "sophos-1",
+                        "n": 1,
+                        "source_lang": "en",
+                        "target_lang": "en",
+                        "temperature": 0.65,
+                        "title": "Plant Disease Consultation",
+                    }
+                    headers = {
+                        "Authorization": "Bearer gAAAAABkSWO3MRq-w1XwDKSv6jCeWbLTY_Jv_pgOjxZ93csqb-2GkA4G9BbcdUEJjIrXnhlX65Nye5FVxoQa1eRY_xwJsYxEQzUXURScaYNhHP1ox8-A4DKn4Tcx2lP32n5_i0qKwJh0"
+                    }
+                    url = "https://api.textcortex.com/v1/texts/blogs"
+                    resp = requests.post(url, json=payload, headers=headers)
+                    print("hit textcortex endpoint")
+                    resp = ast.literal_eval(resp.text)["data"]["outputs"][0]["text"]
+                except Exception as e:
+                    print(e)
+                    resp = ""
 
         return jsonify({"recommendation": resp})
 
